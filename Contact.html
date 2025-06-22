@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدرسة الأمل الابتدائية - اتصل بنا</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* أنماط CSS المشتركة */
+        :root {
+            --primary-blue: #4fc3f7;
+            --primary-yellow: #ffd54f;
+            --primary-green: #81c784;
+            --light-blue: #e1f5fe;
+            --light-yellow: #fff9c4;
+            --light-green: #e8f5e9;
+            --text-dark: #333;
+            --text-light: #555;
+            --white: #fff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 60px;
+            margin-left: 15px;
+            border-radius: 50%;
+            background: var(--white);
+            padding: 5px;
+        }
+
+        .logo h1 {
+            color: var(--white);
+            font-size: 1.8rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover, 
+        nav ul li a.active {
+            background-color: var(--primary-yellow);
+            color: var(--text-dark);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-yellow);
+            color: var(--text-dark);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-green);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            display: inline-block;
+            padding: 0 20px;
+            background: var(--white);
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-blue), var(--primary-green));
+            z-index: 1;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-yellow);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-yellow);
+            padding-right: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-yellow);
+            color: var(--text-dark);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section {
+                padding: 40px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            nav ul li a {
+                font-size: 0.9rem;
+                padding: 6px 10px;
+            }
+        }
+
+        /* أنماط صفحة اتصل بنا */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .info-card {
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 25px;
+        }
+
+        .info-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .info-item i {
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 15px;
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+        }
+
+        .map {
+            height: 250px;
+            background-color: #eee;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .contact-faq {
+            background-color: var(--light-green);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        .contact-faq h3 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border-bottom: 1px dashed #ccc;
+            padding-bottom: 15px;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+            cursor: pointer;
+            position: relative;
+            padding-right: 20px;
+        }
+
+        .faq-question:after {
+            content: "+";
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 1.2rem;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question:after {
+            content: "-";
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMjI1IDExMi41YzAgMjAtOC4xIDM4LjEtMjEuMyA1MS4ycy0zMS4yIDIxLjMtNTEuMiAyMS4zYy0yMCAwLTM4LjEtOC4xLTUxLjItMjEuM1M4MCAxMzIuNSA4MCAxMTIuNWMwLTIwIDguMS0zOC4xIDIxLjMtNTEuMlMxMDIuNSA0MCAxMjIuNSA0MGMyMCAwIDM4LjEgOC4xIDUxLjIgMjEuM1MyMjUgOTIuNSAyMjUgMTEyLjV6Ii8+PHBhdGggZmlsbD0iIzRmYzNmNyIgZD0iTTE1MC42IDEyNC40bC0xNC4xLTE0LjEtMTQuMSAxNC4xLTcuMS03LjEgMTQuMS0xNC4xLTE0LjEtMTQuMSA3LjEtNy4xIDE0LjEgMTQuMSAxNC4xLTE0LjEgNy4xIDcuMS0xNC4xIDE0LjEgMTQuMSAxNC4xeiIvPjwvc3ZnPg==" alt="شعار المدرسة">
+                <h1>مدرسة الأمل الابتدائية</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html">عن المدرسة</a></li>
+                    <li><a href="curriculum.html">المنهج الدراسي</a></li>
+                    <li><a href="contact.html" class="active">اتصل بنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>اتصل بنا</h2>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-form">
+                    <h3>أرسل استفسارك</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">الاسم الكامل</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">رقم الهاتف</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">الموضوع</label>
+                            <select id="subject">
+                                <option value="general">استفسار عام</option>
+                                <option value="admission">التسجيل والقبول</option>
+                                <option value="academic">شؤون أكاديمية</option>
+                                <option value="activities">الأنشطة والفعاليات</option>
+                                <option value="other">موضوع آخر</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">الرسالة</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">إرسال الرسالة</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h3>معلومات التواصل</h3>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>شارع المدارس، حي التعاون، الرياض، المملكة العربية السعودية</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+966 11 234 5678</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@al-amal-school.edu.sa</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <span>الأحد - الخميس: ٧:٣٠ صباحاً - ١:٣٠ ظهراً</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>خريطة الموقع</h3>
+                        <div class="map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.723190934595!2d46.72258761500163!3d24.807820684075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2efc4f7c1175d5%3A0x6e6a8d0b4a7b5e1d!2sRiyadh%2C%20Saudi%20Arabia!5e0!3m2!1sen!2sus!4v1651234567890!5m2!1sen!2sus" width="100%" height="250" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-faq">
+                <h3>أسئلة متكررة</h3>
+                <div class="faq-item">
+                    <div class="faq-question">ما هي مواعيد التسجيل للعام الدراسي الجديد؟</div>
+                    <div class="faq-answer">يبدأ التسجيل للعام الدراسي الجديد في 1 يونيو وينتهي في 31 يوليو من كل عام.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">ما هي المستندات المطلوبة للتسجيل؟</div>
+                    <div class="faq-answer">شهادة ميلاد الطالب، بطاقة الهوية، صور شخصية، شهادة التطعيمات، شهادة النقل (إن وجدت).</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">هل توجد مواصلات مدرسية؟</div>
+                    <div class="faq-answer">نعم، تقدم المدرسة خدمة المواصلات لجميع المناطق مقابل رسوم رمزية.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">ما هي ساعات استقبال أولياء الأمور؟</div>
+                    <div class="faq-answer">يمكنكم زيارة المدرسة خلال أيام الأحد إلى الخميس من الساعة 10 صباحاً حتى 12 ظهراً.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>مدرسة الأمل الابتدائية</h3>
+                    <p>نحو تعليم مبتكر يواكب المستقبل ويرسخ القيم الأصيلة.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="about.html">عن المدرسة</a></li>
+                        <li><a href="curriculum.html">المنهج الدراسي</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>مواعيد العمل</h3>
+                    <ul class="footer-links">
+                        <li>الأحد - الخميس: ٧:٣٠ ص - ١:٣٠ م</li>
+                        <li>الجمعة والسبت: عطلة</li>
+                        <li>استقبال أولياء الأمور: ١٠ ص - ١٢ ظ</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>النشرة الإخبارية</h3>
+                    <p>اشترك في نشرتنا الإخبارية لتصلك آخر أخبار المدرسة وفعالياتها.</p>
+                    <form>
+                        <input type="email" placeholder="بريدك الإلكتروني" required>
+                        <button type="submit" class="btn">اشتراك</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>جميع الحقوق محفوظة © مدرسة الأمل الابتدائية ٢٠٢٣</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // التنقل النشط
+        const currentPage = window.location.pathname.split('/').pop();
+        document.querySelectorAll('nav a').forEach(link => {
+            if(link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+
+        // تفعيل الأسئلة المتكررة
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                this.parentElement.classList.toggle('active');
+            });
+        });
+
+        // نموذج الاتصال
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('شكراً لتواصلكم! سنرد على استفساركم في أقرب وقت ممكن.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
